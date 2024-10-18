@@ -35,6 +35,8 @@ def draw_house(context):
     context.line_to(450, 400)
     context.line_to(450, 200)
     context.stroke()
+    context.rectangle(115, 400, 1000, 20)
+    context.stroke()
 
 
 # Function to draw the windows

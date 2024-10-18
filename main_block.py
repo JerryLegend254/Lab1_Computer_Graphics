@@ -1,16 +1,8 @@
 import cairo
 import math
 
+
 # Create a surface and context
-width, height = 1200, 600
-surface = cairo.ImageSurface(cairo.FORMAT_RGB24, width, height)
-context = cairo.Context(surface)
-
-# Set the background color to white
-context.set_source_rgb(1, 1, 1)
-context.paint()
-
-
 def draw_roof(context):
     context.set_source_rgb(0, 0, 0)
     context.set_line_width(3)
@@ -62,5 +54,17 @@ def draw_windows(context):
     context.rectangle(200, 350, 200, 10)
     context.stroke()
 
+    context.rectangle(700, 250, 170, 100)
+    context.stroke()
+
+    context.rectangle(685, 350, 200, 10)
+    context.stroke()
+
+    context.rectangle(135, 400, 800, 30)
+    context.stroke()
 
 
+def draw_left_block(context):
+    draw_roof(context)
+    draw_house(context)
+    draw_windows(context)

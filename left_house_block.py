@@ -30,10 +30,10 @@ def create_left_house_block(ctx: cairo.Context):
     ctx.line_to(950, 200)
     ctx.set_line_join(cairo.LINE_JOIN_MITER)
     ctx.move_to(950, 200)
-    ctx.line_to(850, 10)
+    ctx.line_to(850, 50)
     ctx.set_line_join(cairo.LINE_JOIN_MITER)
-    ctx.move_to(300, 10)
-    ctx.line_to(850, 10)
+    ctx.move_to(340, 50)
+    ctx.line_to(850, 50)
     ctx.set_line_join(cairo.LINE_JOIN_MITER)
 
     ctx.set_source_rgb(0, 0, 0)

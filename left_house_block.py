@@ -1,39 +1,23 @@
 import cairo
-
-surface = cairo.ImageSurface(cairo.FORMAT_RGB24, 1000, 800)
-ctx = cairo.Context(surface)
-ctx.set_source_rgb(0.8, 0.8, 0.8)
-ctx.paint()
+from utils import fractionize
 
 
 # Subpath for the house (Right)rectangle
-def create_left_house_block(ctx: cairo.Context):
-    ctx.move_to(480, 200)
-    ctx.line_to(920, 200)
-    ctx.set_line_join(cairo.LINE_JOIN_MITER)
-    ctx.move_to(920, 200)
-    ctx.line_to(920, 400)
-    ctx.set_line_join(cairo.LINE_JOIN_MITER)
-    ctx.move_to(920, 400)
-    ctx.line_to(450, 400)
-    ctx.set_line_join(cairo.LINE_JOIN_MITER)
-    ctx.move_to(920, 200)
-    ctx.line_to(487, 200)
+def create_left_house_block(ctx: cairo.Context, x=800, y=600):
+    ctx.move_to(fractionize(x, 1.15), fractionize(600, 0.333))
+    ctx.line_to(fractionize(x, 1.15), fractionize(600, 0.667))
     ctx.set_line_join(cairo.LINE_JOIN_MITER)
 
-    '''ctx.move_to(400,600)
-    ctx.line_to(400,300)
-    ctx.set_line_join(cairo.LINE_JOIN_MITER)'''
+    ctx.move_to(fractionize(800, 0.6105), fractionize(600, 0.333))
+    ctx.line_to(fractionize(800, 1.1875), fractionize(600, 0.333))
+    ctx.set_line_join(cairo.LINE_JOIN_MITER)
 
-    # Quadrilateral roof for (left house) section
-    ctx.move_to(487, 200)
-    ctx.line_to(950, 200)
+    ctx.move_to(fractionize(800, 1.1875), fractionize(600, 0.333))
+    ctx.line_to(fractionize(800, 1.0625), fractionize(600, 0.083))
     ctx.set_line_join(cairo.LINE_JOIN_MITER)
-    ctx.move_to(950, 200)
-    ctx.line_to(850, 50)
-    ctx.set_line_join(cairo.LINE_JOIN_MITER)
-    ctx.move_to(340, 50)
-    ctx.line_to(850, 50)
+
+    ctx.move_to(fractionize(800, 0.425), fractionize(600, 0.083))
+    ctx.line_to(fractionize(800, 1.0625), fractionize(600, 0.083))
     ctx.set_line_join(cairo.LINE_JOIN_MITER)
 
     ctx.set_source_rgb(0, 0, 0)
